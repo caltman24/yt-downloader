@@ -2,9 +2,12 @@
 import { YoutubeVideoInfo } from "@/types";
 import { FormEvent, useState } from "react"
 
-const BASE_URL = "http://localhost:3000"
-
 type ValidFileFormats = "mp3"
+
+const BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://simply-yt.vercel.app"
+
+console.log(process.env)
+
 
 async function fetchVideoInfo(url: string) {
   if (url.length === 0) throw new Error("Url is empty")
