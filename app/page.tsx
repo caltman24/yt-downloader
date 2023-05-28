@@ -6,7 +6,6 @@ type ValidFileFormats = "mp3"
 
 const BASE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://simply-yt.vercel.app"
 
-console.log(process.env)
 
 
 async function fetchVideoInfo(url: string) {
